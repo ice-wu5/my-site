@@ -1,17 +1,28 @@
 <template>
   <div class="icon-container">
-    <i class="iconfont" :class="type"></i>
+    <i class="iconfont" :class="fontClass"></i>
 
   </div>
 </template>
 
 <script>
+const classNameMap = {
+  home: '',
+  qq: 'icon-QQ',
+  wechat: 'icon-wechat',
+  tel: 'icon-telephone'
+}
 export default {
   name: 'IconIndex',
   props: {
     type: {
       type: String,
       required: true
+    }
+  },
+  computed: {
+    fontClass () {
+      return classNameMap[this.type]
     }
   }
 }

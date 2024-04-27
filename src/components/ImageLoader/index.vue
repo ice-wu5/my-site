@@ -9,6 +9,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'ImageLoader',
   data () {
@@ -31,13 +32,20 @@ export default {
       default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Y6mbPz3a0VRhzK9f0-xR7hUAULduVppnC5jLKsmWuQ&s'
     }
   },
+
   methods: {
     handleLoad (e) {
       this.$emit('load', e)
-      setTimeout(() => {
+      let timer = setTimeout(() => {
         this.isLoaded = true
         this.isShow = true
+        console.log('定时器关闭了')
       }, this.duration * 1000)
+      this.$once('hook:beforeDestroy', () => {
+        clearInterval(timer)
+        timer = null
+      }
+      )
     }
   }
 }
