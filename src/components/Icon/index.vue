@@ -7,10 +7,14 @@
 
 <script>
 const classNameMap = {
-  home: '',
+  home: 'icon-user',
   qq: 'icon-QQ',
   wechat: 'icon-wechat',
-  tel: 'icon-telephone'
+  tel: 'icon-telephone',
+  blog: 'icon-article',
+  about: 'icon-about',
+  project: 'icon-code',
+  message: 'icon-email'
 }
 export default {
   name: 'IconIndex',

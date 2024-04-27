@@ -3,7 +3,7 @@
     <a :href="href" class="contact-a">
       <Icon :type="type"></Icon>
       <span class="contact-span">{{text}}</span>
-      <div class="code">
+      <div class="code" v-if="src">
         <img class="img" :src="src" alt="">
         <div class="tran"></div>
       </div>
@@ -29,7 +29,7 @@ export default {
     },
     src: {
       type: String,
-      required: true
+      required: false
     },
     href: {
       type: String

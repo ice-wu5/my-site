@@ -4,6 +4,9 @@
     <div class="imageloader-container">
       <ImageLoader @load="handleLoad" :src="'http://www.daxiaamu.com/wp-content/uploads/2014/11/4_ingoscholtes_uk.jpg'"  :duration="duration"></ImageLoader>
     </div>
+    <div class="menu-box">
+      <Menu></Menu>
+    </div>
     <div class="app-container">
       <Empty></Empty>
     </div>
@@ -23,6 +26,7 @@ import Pager from '@/components/Pager'
 import Empty from '@/components/Empty'
 import ImageLoader from '@/components/ImageLoader'
 import Contact from '@/components/Contact'
+import Menu from '@/components/Menu'
 import CodeImg from '@/assets/code.png'
 
 export default ({
@@ -32,7 +36,8 @@ export default ({
     Pager,
     Empty,
     ImageLoader,
-    Contact
+    Contact,
+    Menu
   },
   data () {
     return {
