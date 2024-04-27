@@ -2,9 +2,9 @@
   <div class="contact-container">
     <a :href="href" class="contact-a">
       <Icon :type="type"></Icon>
-      <span class="contact-span">{{text}}</span>
+      <span class="contact-span">{{ text }}</span>
       <div class="code" v-if="src">
-        <img class="img" :src="src" alt="">
+        <img class="img" :src="src" alt="" />
         <div class="tran"></div>
       </div>
     </a>
@@ -39,36 +39,40 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.contact-container{
+.contact-container {
   width: 100%;
-  height: 30px;
-  background-color: #bbdd8f;
+  color: rgb(185, 187, 190);
 }
-.contact-a{
+.contact-a {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: relative;
   align-items: center;
-  padding: 0 10px;
-  &:hover .code{
-  transform: scaleY(1);
-  opacity: 1;
-
+  min-width: 170px;
+  text-align: left;
+  padding: 5px 0 5px 10px;
+  color: inherit;
+  &:hover {
+    color: #efeaea;
+  }
+  &:hover .code {
+    transform: scaleY(1);
+    opacity: 1;
   }
 }
-.contact-span{
-  margin-left: 10px;
+.contact-span {
+  margin-left: 20px;
 }
-.img{
+.img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.code{
+.code {
   position: absolute;
-  left:20px;
-  top:-160px;
+  left: 20px;
+  top: -152px;
   width: 150px;
   height: 150px;
   padding: 10px;
@@ -76,16 +80,16 @@ export default {
   transform-origin: center 160px;
   opacity: 0;
   transition: 0.25s;
-  background-color: #ffffff;
+  background-color: #fff;
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
-  .tran{
+  .tran {
     position: absolute;
-    left:50%;
-    bottom:-9%;
-    transform: translate(-50%,-50%) rotate(-45deg);
+    left: 50%;
+    bottom: -9%;
+    transform: translate(-50%, -50%) rotate(-45deg);
     width: 15px;
     height: 15px;
-    background-color: #ffffff;
+    background-color: #fff;
   }
 }
 </style>>

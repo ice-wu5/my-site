@@ -1,26 +1,37 @@
 <template>
   <div class="empty-container">
-    <img class="empty-img" src="https://img01.yzcdn.cn/vant/empty-image-default.png">
+    <Icon type="empty"></Icon>
+    <p class="text">{{ text }}</p>
   </div>
 </template>
 
 <script>
+import Icon from '@/components/Icon'
 export default {
-  name: 'EmptyIndex'
+  name: 'EmptyIndex',
+  components: {
+    Icon
+  },
+  props: {
+    text: {
+      type: String,
+      default: '暂无数据'
+    }
+  },
+  data () {
+    return {
+
+    }
+  }
 }
 </script>
 
 <style lang="less" scoped>
-.empty-container{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .empty-img{
-    width: 50%;
-    height: 50%;
-    object-fit: cover;
-  }
+@import "~@/styles/mixin.less";
+@import "~@/styles/var.less";
+.empty-container {
+  .self-center(absolute);
+  text-align: center;
+  color: @words;
 }
 </style>>

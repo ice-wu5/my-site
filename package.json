@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:Pafer": "vue serve ./src/components/Pager/test.vue"
+    "test:Empty": "vue serve ./src/components/Empty/test.vue"
   },
   "dependencies": {
     "core-js": "^3.8.3",

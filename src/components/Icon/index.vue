@@ -1,20 +1,20 @@
 <template>
   <div class="icon-container">
     <i class="iconfont" :class="fontClass"></i>
-
   </div>
 </template>
 
 <script>
 const classNameMap = {
-  home: 'icon-user',
+  home: 'icon-home',
   qq: 'icon-QQ',
   wechat: 'icon-wechat',
   tel: 'icon-telephone',
   blog: 'icon-article',
   about: 'icon-about',
   project: 'icon-code',
-  message: 'icon-email'
+  message: 'icon-email',
+  empty: 'icon-empty'
 }
 export default {
   name: 'IconIndex',
@@ -33,10 +33,10 @@ export default {
 </script>
 
 <style scoped lang="less">
-@import url("//at.alicdn.com/t/c/font_4523054_8xopx2xvjfh.css");
+@import url("//at.alicdn.com/t/c/font_4523054_mav5sq7g13.css");
 
-.iconfont{
-  color:inherit;
+.iconfont {
+  color: inherit;
   font-size: inherit;
 }
 </style>

@@ -1,15 +1,25 @@
 <template>
   <div class="imageloader-container">
     <!-- 占位图片 -->
-    <img v-if="isLoaded===false" class="img-placeholder" :src="placeholder" alt="">
+    <img
+      v-if="isLoaded === false"
+      class="img-placeholder"
+      :src="placeholder"
+      alt=""
+    />
     <!-- 实际图片 -->
-    <img @load="handleLoad"  class="img-origin" :class="{isShow:isShow,isHidden:!isShow}" :src="src" alt="">
-
+    <img
+      @load="handleLoad"
+      class="img-origin"
+      :class="{ isShow: isShow, isHidden: !isShow }"
+      :src="src"
+      alt=""
+    />
   </div>
 </template>
 
 <script>
-
+import SmallImg from '@/assets/small.jpg'
 export default {
   name: 'ImageLoader',
   data () {
@@ -29,7 +39,7 @@ export default {
     },
     placeholder: {
       type: String,
-      default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Y6mbPz3a0VRhzK9f0-xR7hUAULduVppnC5jLKsmWuQ&s'
+      default: SmallImg
     }
   },
 
@@ -52,30 +62,30 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.imageloader-container{
+.imageloader-container {
   position: relative;
   width: 100%;
   height: 100%;
-  img{
+  img {
     position: absolute;
     left: 0;
-    top:0;
+    top: 0;
     width: 100%;
     height: 100%;
   }
 }
-.isShow{
+.isShow {
   opacity: 1;
 }
-.isHidden{
+.isHidden {
   opacity: 0;
 }
-.img-origin{
-  z-index:1;
-  transition:0.5s;
+.img-origin {
+  z-index: 1;
+  transition: 0.5s;
 }
-.img-placeholder{
+.img-placeholder {
   opacity: 0.25;
-  z-index:2
+  z-index: 2;
 }
 </style>>
