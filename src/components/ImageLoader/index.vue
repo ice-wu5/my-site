@@ -66,6 +66,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   img {
     position: absolute;
     left: 0;
@@ -85,7 +86,7 @@ export default {
   transition: 0.5s;
 }
 .img-placeholder {
-  opacity: 0.25;
+  filter: blur(2vw);
   z-index: 2;
 }
 </style>>

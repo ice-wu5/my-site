@@ -1,27 +1,32 @@
 <template>
   <div id="app">
-    <!-- <div class="aside-box">
+    <div class="aside-box">
       <SideAside></SideAside>
-    </div> -->
-    <!-- <div class="empty-box">
+    </div>
+    <!-- <div class="menu-box">
+      <Menu></Menu>
+    </div>
+    <div class="empty-box">
       <Empty></Empty>
-    </div> -->
+    </div>
     <div class="img-box">
       <ImageLoader :src="src"></ImageLoader>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
-// import SideAside from '@/components/SiteAside'
+import SideAside from '@/components/SiteAside'
 // import Empty from '@/components/Empty'
-import ImageLoader from '@/components/ImageLoader'
+// import ImageLoader from '@/components/ImageLoader'
 import BigImg from '@/assets/big.jpg'
+// import Menu from '@/components/Menu'
 
 export default ({
   components: {
-    // SideAside,
-    // Empty,
-    ImageLoader
+    SideAside
+    //   Empty,
+    //   ImageLoader,
+    //   Menu
   },
   data () {
     return {

@@ -60,6 +60,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.menu {
+  width: 100%;
+}
 .siteaside-container {
   display: flex;
   flex-direction: column;
@@ -67,7 +70,6 @@ export default {
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 10px;
   overflow-y: auto;
   background-color: #464444;
   color: rgb(185, 187, 190);
