@@ -34,6 +34,9 @@ export default {
       default: 5
     }
   },
+  mounted () {
+    console.log(this.totalPage)
+  },
   methods: {
     // 向父组件抛出事件，传递需要显示的当前页码
     handlePageChange (num) {

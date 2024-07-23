@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <div class="aside-box">
+    <!-- <div class="aside-box">
       <SideAside></SideAside>
+    </div> -->
+    <div class="pager">
+      <!-- <PagerOri :current="6" :total="55" :visibleNum="5" :pageNumber="10"></PagerOri> -->
     </div>
+    <Pager @pageChange="handlePageChange" :current="current" :total="5" :visibleNum="5" :pageSize="10"></Pager>
     <!-- <div class="menu-box">
       <Menu></Menu>
     </div>
@@ -15,7 +19,9 @@
   </div>
 </template>
 <script>
-import SideAside from '@/components/SiteAside'
+import Pager from '@/components/PagerIndex/index.vue'
+// import PagerOri from '@/components/Pager/index.vue'
+// import SideAside from '@/components/SiteAside'
 // import Empty from '@/components/Empty'
 // import ImageLoader from '@/components/ImageLoader'
 import BigImg from '@/assets/big.jpg'
@@ -23,14 +29,24 @@ import BigImg from '@/assets/big.jpg'
 
 export default ({
   components: {
-    SideAside
+    // PagerOri,
+    Pager
+    // SideAside
     //   Empty,
     //   ImageLoader,
     //   Menu
   },
+  methods: {
+    handlePageChange (num) {
+      // console.log(num)
+      this.current = num
+    }
+  },
   data () {
     return {
-      src: BigImg
+      src: BigImg,
+      current: 5,
+      total: 40
     }
   }
 
