@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <div class="contact-box">
+      <ContactIndex :list="contactList" />
+    </div>
     <!-- <div class="aside-box">
       <SideAside></SideAside>
     </div> -->
@@ -9,9 +12,9 @@
     <!-- <div class="empty">
       <Empty></Empty>
     </div> -->
-    <div class="image-loader">
+    <!-- <div class="image-loader">
       <ImageLoader @load="handleLoad" :placeholder="placeholder" :src="src" />
-    </div>
+    </div> -->
     <!-- <Pager @pageChange="handlePageChange" :current="current" :total="5" :visibleNum="5" :pageSize="10"></Pager> -->
     <!-- <div class="menu-box">
       <Menu></Menu>
@@ -26,7 +29,8 @@
 </template>
 <script>
 // import Pager from '@/components/PagerIndex/index.vue'
-import ImageLoader from '@/components/ImageLoaderIndex/index.vue'
+// import ImageLoader from '@/components/ImageLoaderIndex/index.vue'
+import ContactIndex from '@/components/ContactIndex/index.vue'
 // import Empty from '@/components/EmptyIndex/index.vue'
 // import PagerOri from '@/components/Pager/index.vue'
 // import SideAside from '@/components/SiteAside'
@@ -34,11 +38,13 @@ import ImageLoader from '@/components/ImageLoaderIndex/index.vue'
 // import ImageLoader from '@/components/ImageLoader'
 import BigImg from '@/assets/big.jpg'
 import Placeholder from '@/assets/bigpic.jpg'
+import QRCode from '@/assets/code.png'
 // import Menu from '@/components/Menu'
 
 export default {
   components: {
-    ImageLoader
+    ContactIndex
+    // ImageLoader
     // PagerOri,
     // Pager,
     // Empty
@@ -58,6 +64,22 @@ export default {
   },
   data () {
     return {
+      contactList: [
+        {
+          icon: 'home',
+          contact: 'http://www.icewu.com',
+          qrcode: QRCode
+        },
+        {
+          icon: 'qq',
+          contact: '2019402980',
+          qrcode: QRCode
+        }, {
+          icon: 'wechat',
+          contact: '1234567',
+          qrcode: QRCode
+        }
+      ],
       src: BigImg,
       placeholder: Placeholder,
       current: 5,
@@ -90,7 +112,10 @@ export default {
   height: 100vh;
 }
 .contact-box {
-  width: 200px;
+  width: 500px;
+  height: 300px;
+  padding-top: 200px;
+  background: #cd9a9a;
 }
 .imageloader-container {
   width: 300px;
