@@ -38,6 +38,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.contact-container {
+  width: 100%;
+  padding-left: 33%;
+}
 li {
   position: relative;
   &:hover .qrcode {
@@ -48,7 +52,7 @@ li {
 .qrcode {
   position: absolute;
   z-index: 1;
-  left: 15%;
+  left: -15%;
   bottom: 110%;
   width: 170px;
   height: 170px;
@@ -77,14 +81,12 @@ li {
     object-fit: cover;
   }
 }
-.contact-container {
-  display: flex;
-  justify-content: center;
-}
+
 a {
   display: flex;
   align-items: center;
-  color: #fff;
+  color: #d7d2d2;
+  font-size: 12px;
   line-height: 1.2;
 }
 span {

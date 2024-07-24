@@ -1,8 +1,14 @@
 <template>
   <div id="app">
-    <div class="contact-box">
-      <ContactIndex :list="contactList" />
+    <div class="site-aside">
+      <SiteAside></SiteAside>
     </div>
+    <!-- <div class="menu-container">
+      <MenuIndex :list="menuList"></MenuIndex>
+    </div> -->
+    <!-- <div class="contact-box">
+      <ContactIndex :list="contactList" />
+    </div> -->
     <!-- <div class="aside-box">
       <SideAside></SideAside>
     </div> -->
@@ -30,7 +36,9 @@
 <script>
 // import Pager from '@/components/PagerIndex/index.vue'
 // import ImageLoader from '@/components/ImageLoaderIndex/index.vue'
-import ContactIndex from '@/components/ContactIndex/index.vue'
+// import MenuIndex from '@/components/MenuIndex/index.vue'
+import SiteAside from '@/components/SiteAsideIndex/index.vue'
+// import ContactIndex from '@/components/ContactIndex/index.vue'
 // import Empty from '@/components/EmptyIndex/index.vue'
 // import PagerOri from '@/components/Pager/index.vue'
 // import SideAside from '@/components/SiteAside'
@@ -43,7 +51,9 @@ import QRCode from '@/assets/code.png'
 
 export default {
   components: {
-    ContactIndex
+    SiteAside
+    // MenuIndex
+    // ContactIndex
     // ImageLoader
     // PagerOri,
     // Pager,
@@ -64,6 +74,41 @@ export default {
   },
   data () {
     return {
+      menuList: [
+        {
+          icon: 'home',
+          link: '/',
+          menu: '首页',
+          isActive: false
+        },
+        {
+          icon: 'blog',
+          link: '/blog',
+          menu: '文章',
+          isActive: false,
+          startWith: true
+        },
+        {
+          icon: 'about',
+          menu: '关于我',
+          link: '/about',
+          isActive: false
+        },
+        {
+          icon: 'project',
+          menu: '项目',
+          link: '/project',
+          isActive: false
+
+        },
+        {
+          icon: 'message',
+          link: '/message',
+          menu: '留言板',
+          isActive: true
+
+        }
+      ],
       contactList: [
         {
           icon: 'home',
@@ -74,7 +119,8 @@ export default {
           icon: 'qq',
           contact: '2019402980',
           qrcode: QRCode
-        }, {
+        },
+        {
           icon: 'wechat',
           contact: '1234567',
           qrcode: QRCode
@@ -90,6 +136,16 @@ export default {
 </script>
 
 <style lang="less">
+.site-aside {
+  width: 300px;
+  height: 700px;
+}
+// .menu-container {
+//   width: 400px;
+//   height: 300px;
+//   // padding-top: 200px;
+//   background: #cd9a9a;
+// }
 .image-loader {
   width: 500px;
   height: 300px;
