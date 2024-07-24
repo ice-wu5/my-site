@@ -2,7 +2,7 @@
   <div class="site-aside-container">
     <Avatar :src="avatar" :size="100"></Avatar>
     <div class="title">icewu</div>
-    <MenuIndex :list="menuList"></MenuIndex>
+    <MenuIndex @changeMenu="handleChangeMenu" :list="menuList"></MenuIndex>
     <ContactIndex :list="contactList"></ContactIndex>
   </div>
 </template>
@@ -13,7 +13,9 @@ import MenuIndex from '@/components/MenuIndex/index.vue'
 import ContactIndex from '@/components/ContactIndex/index.vue'
 import avatar from '@/assets/2.jpeg'
 import QRCode from '@/assets/code.png'
+import RouterMixins from '@/mixins/router.js'
 export default {
+  mixins: [RouterMixins],
   name: 'SiteAside',
   components: {
     Avatar,
@@ -26,6 +28,7 @@ export default {
       menuList: [
         {
           icon: 'home',
+          name: 'Home',
           link: '/',
           menu: '首页',
           isActive: false
@@ -33,6 +36,7 @@ export default {
         {
           icon: 'blog',
           link: '/blog',
+          name: 'Blog',
           menu: '文章',
           isActive: false,
           startWith: true
@@ -41,18 +45,21 @@ export default {
           icon: 'about',
           menu: '关于我',
           link: '/about',
+          name: 'About',
           isActive: false
         },
         {
           icon: 'project',
           menu: '项目',
           link: '/project',
+          name: 'Project',
           isActive: false
 
         },
         {
           icon: 'message',
           link: '/message',
+          name: 'Message',
           menu: '留言板',
           isActive: true
 
@@ -76,17 +83,25 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    handleChangeMenu (item) {
+      this.routerPush(item.name)
+    }
   }
 }
 </script>
 
 <style lang="less" scoped>
+.menu-container {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 .title {
   color: #d1cbcb;
 }
 .site-aside-container {
-  overflow-y: auto;
-  overflow-x: hidden;
   width: 100%;
   height: 100%;
   display: flex;
@@ -95,5 +110,7 @@ export default {
   align-items: center;
   background: rgb(112, 108, 109);
   padding: 50px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 </style>>

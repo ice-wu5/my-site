@@ -38,6 +38,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.icon-container {
+  font-size: 20px;
+}
 .contact-container {
   width: 100%;
   padding-left: 33%;
@@ -85,9 +88,9 @@ li {
 a {
   display: flex;
   align-items: center;
-  color: #d7d2d2;
-  font-size: 12px;
-  line-height: 1.2;
+  color: #b8b5b5;
+  font-size: 16px;
+  line-height: 1.8;
 }
 span {
   margin-left: 10px;

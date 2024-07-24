@@ -2,6 +2,7 @@
   <div class="menu-container">
     <ul>
       <li
+        @click="handleClick(item)"
         :class="{ isActive: isActive(item) }"
         v-for="(item, index) in list"
         :key="index"
@@ -36,11 +37,16 @@ export default {
     }
   },
   methods: {
+    handleClick (item) {
+      this.$emit('changeMenu', item)
+    },
     isActive (item) {
+      const curRoutePath = this.$route.path
+      console.log('curRoutePath', curRoutePath)
       if (item.startWith) {
-        return location.pathname.startsWith(item.link)
+        return curRoutePath.startsWith(item.link)
       }
-      return location.pathname === item.link
+      return curRoutePath === item.link
     }
   }
 }
@@ -57,7 +63,7 @@ ul {
 }
 li {
   width: 100%;
-  color: #d1cbcb;
+  color: #b8b5b5;
   cursor: pointer;
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
@@ -66,14 +72,19 @@ li {
 }
 .isActive {
   background-color: rgba(0, 0, 0, 0.1);
+  color: #ffffff;
 }
 .menu {
   display: flex;
   align-items: center;
   padding-left: 33%;
-  line-height: 1.2;
+  line-height: 1.8;
+  font-size: 16px;
 }
 span {
   margin-left: 10px;
+}
+.icon-container {
+  font-size: 20px;
 }
 </style>>

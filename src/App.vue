@@ -1,8 +1,18 @@
 <template>
   <div id="app">
-    <div class="site-aside">
-      <SiteAside></SiteAside>
+    <div class="layout-out-box">
+      <Layout>
+        <template #left>
+          <div class="site-aside">
+            <SiteAside></SiteAside>
+          </div>
+        </template>
+        <div class="main">
+          <router-view></router-view>
+        </div>
+      </Layout>
     </div>
+
     <!-- <div class="menu-container">
       <MenuIndex :list="menuList"></MenuIndex>
     </div> -->
@@ -12,9 +22,9 @@
     <!-- <div class="aside-box">
       <SideAside></SideAside>
     </div> -->
-    <div class="pager">
-      <!-- <PagerOri :current="6" :total="55" :visibleNum="5" :pageNumber="10"></PagerOri> -->
-    </div>
+    <!-- <div class="pager"> -->
+    <!-- <PagerOri :current="6" :total="55" :visibleNum="5" :pageNumber="10"></PagerOri> -->
+    <!-- </div> -->
     <!-- <div class="empty">
       <Empty></Empty>
     </div> -->
@@ -38,20 +48,22 @@
 // import ImageLoader from '@/components/ImageLoaderIndex/index.vue'
 // import MenuIndex from '@/components/MenuIndex/index.vue'
 import SiteAside from '@/components/SiteAsideIndex/index.vue'
+import Layout from '@/components/Layout/index.vue'
 // import ContactIndex from '@/components/ContactIndex/index.vue'
 // import Empty from '@/components/EmptyIndex/index.vue'
 // import PagerOri from '@/components/Pager/index.vue'
 // import SideAside from '@/components/SiteAside'
 // import Empty from '@/components/Empty'
 // import ImageLoader from '@/components/ImageLoader'
-import BigImg from '@/assets/big.jpg'
-import Placeholder from '@/assets/bigpic.jpg'
-import QRCode from '@/assets/code.png'
+// import BigImg from '@/assets/big.jpg'
+// import Placeholder from '@/assets/bigpic.jpg'
+// import QRCode from '@/assets/code.png'
 // import Menu from '@/components/Menu'
 
 export default {
   components: {
-    SiteAside
+    SiteAside,
+    Layout
     // MenuIndex
     // ContactIndex
     // ImageLoader
@@ -74,71 +86,24 @@ export default {
   },
   data () {
     return {
-      menuList: [
-        {
-          icon: 'home',
-          link: '/',
-          menu: '首页',
-          isActive: false
-        },
-        {
-          icon: 'blog',
-          link: '/blog',
-          menu: '文章',
-          isActive: false,
-          startWith: true
-        },
-        {
-          icon: 'about',
-          menu: '关于我',
-          link: '/about',
-          isActive: false
-        },
-        {
-          icon: 'project',
-          menu: '项目',
-          link: '/project',
-          isActive: false
 
-        },
-        {
-          icon: 'message',
-          link: '/message',
-          menu: '留言板',
-          isActive: true
-
-        }
-      ],
-      contactList: [
-        {
-          icon: 'home',
-          contact: 'http://www.icewu.com',
-          qrcode: QRCode
-        },
-        {
-          icon: 'qq',
-          contact: '2019402980',
-          qrcode: QRCode
-        },
-        {
-          icon: 'wechat',
-          contact: '1234567',
-          qrcode: QRCode
-        }
-      ],
-      src: BigImg,
-      placeholder: Placeholder,
-      current: 5,
-      total: 40
     }
   }
 }
 </script>
 
 <style lang="less">
+.layout-out-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background: #999191;
+}
 .site-aside {
-  width: 300px;
-  height: 700px;
+  width: 250px;
+  height: 100%;
 }
 // .menu-container {
 //   width: 400px;
@@ -146,43 +111,40 @@ export default {
 //   // padding-top: 200px;
 //   background: #cd9a9a;
 // }
-.image-loader {
-  width: 500px;
-  height: 300px;
-  background: #e8b4b4;
-  margin: 10px auto;
-  border: 2px dashed #000;
-}
-.empty {
-  width: 200px;
-  height: 300px;
-  background: #e8b4b4;
-  margin: 10px auto;
-}
-.img-box {
-  width: 400px;
-  height: 300px;
-}
-.aside-box {
-  width: 250px;
-  height: 100vh;
-}
-.contact-box {
-  width: 500px;
-  height: 300px;
-  padding-top: 200px;
-  background: #cd9a9a;
-}
-.imageloader-container {
-  width: 300px;
-  height: 200px;
-}
-.app-container {
-  width: 500px;
-  height: 400px;
-  background-color: #e8b4b4;
-}
-.icon-container {
-  font-size: 30px;
-}
+// .image-loader {
+//   width: 500px;
+//   height: 300px;
+//   background: #e8b4b4;
+//   margin: 10px auto;
+//   border: 2px dashed #000;
+// }
+// .empty {
+//   width: 200px;
+//   height: 300px;
+//   background: #e8b4b4;
+//   margin: 10px auto;
+// }
+// .img-box {
+//   width: 400px;
+//   height: 300px;
+// }
+// .aside-box {
+//   width: 250px;
+//   height: 100vh;
+// }
+// .contact-box {
+//   width: 500px;
+//   height: 300px;
+//   padding-top: 200px;
+//   background: #cd9a9a;
+// }
+// .imageloader-container {
+//   width: 300px;
+//   height: 200px;
+// }
+// .app-container {
+//   width: 500px;
+//   height: 400px;
+//   background-color: #e8b4b4;
+// }
 </style>
