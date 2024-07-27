@@ -7,6 +7,10 @@
 <script>
 const classNameMap = {
   home: 'icon-home',
+  success: 'icon-success',
+  info: 'icon-info',
+  error: 'icon-error',
+  danger: 'icon-Danger',
   qq: 'icon-QQ',
   wechat: 'icon-wechat',
   tel: 'icon-telephone',
@@ -33,7 +37,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-@import url("//at.alicdn.com/t/c/font_4523054_mav5sq7g13.css");
+@import url("//at.alicdn.com/t/c/font_4523054_yij98wvbcgr.css");
 
 .iconfont {
   color: inherit;

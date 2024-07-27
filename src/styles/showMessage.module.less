@@ -1,0 +1,35 @@
+.message{
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%,-50%) translateY(15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  padding: 10px 15px;
+  line-height: 1.2;
+  border-radius:5px;
+  color: #797575;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.4);
+  transition: 0.2s;
+  opacity: 0;
+  z-index: 999;
+  white-space: nowrap;
+  &-info{
+    background-color: blanchedalmond;
+  }
+  &-success{
+    background-color: rgb(192, 245, 188);
+  }
+  &-danger{
+    background-color: rgb(220, 209, 138);
+  }
+  &-error{
+    background-color: rgb(233, 118, 97);
+  }
+}
+.content{
+  font-size: 16px;
+  padding-left: 3px;
+}

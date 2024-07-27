@@ -66,7 +66,7 @@ li {
   transform-origin: center bottom;
   background-color: #fff;
   border-radius: 3%;
-  filter: drop-shadow(2vw);
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.9));
   &::before {
     content: "";
     position: absolute;

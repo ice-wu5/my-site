@@ -42,7 +42,7 @@ export default {
     },
     isActive (item) {
       const curRoutePath = this.$route.path
-      console.log('curRoutePath', curRoutePath)
+      // console.log('curRoutePath', curRoutePath)
       if (item.startWith) {
         return curRoutePath.startsWith(item.link)
       }
