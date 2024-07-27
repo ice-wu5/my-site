@@ -18,16 +18,16 @@
   white-space: nowrap;
 }
 .message-info {
-  background-color: blanchedalmond;
+  background-color: #d6c6af;
 }
 .message-success {
   background-color: #c0f5bc;
 }
 .message-danger {
-  background-color: #dcd18a;
+  background-color: #f8cf93;
 }
 .message-error {
-  background-color: #e97661;
+  background-color: #d97463;
 }
 .content {
   font-size: 16px;

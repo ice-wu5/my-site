@@ -5,6 +5,8 @@ import store from './store'
 import './styles/global.less'
 import './styles/mixin.less'
 import { showMessage } from './utils'
+import '@/mock/index'
+import '@/api/banner'
 Vue.config.productionTip = false
 Vue.prototype.$showMessage = showMessage
 // showMessage()

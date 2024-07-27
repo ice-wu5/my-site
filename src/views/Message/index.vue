@@ -6,15 +6,15 @@
 export default {
   name: 'MessageIndex',
   mounted () {
-    this.$showMessage({
-      content: '注册成功',
-      type: 'success',
-      duration: 5000,
-      container: this.$refs.messageContainer,
-      callback: () => {
-        console.log('callback执行了')
-      }
-    })
+    // this.$showMessage({
+    //   content: '注册成功',
+    //   type: 'success',
+    //   duration: 5000,
+    //   container: this.$refs.messageContainer,
+    //   callback: () => {
+    //     console.log('callback执行了')
+    //   }
+    // })
   }
 }
 </script>
