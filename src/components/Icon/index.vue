@@ -6,6 +6,8 @@
 
 <script>
 const classNameMap = {
+  arrowUp: 'icon-shangjiantou',
+  arrowDown: 'icon-xiajiantou',
   home: 'icon-home',
   success: 'icon-success',
   info: 'icon-info',
@@ -37,7 +39,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-@import url("//at.alicdn.com/t/c/font_4523054_yij98wvbcgr.css");
+@import url("//at.alicdn.com/t/c/font_4523054_hrlo6vdt8cs.css");
 
 .iconfont {
   color: inherit;

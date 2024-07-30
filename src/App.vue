@@ -7,7 +7,7 @@
             <SiteAside></SiteAside>
           </div>
         </template>
-        <div class="main">
+        <div class="content">
           <router-view></router-view>
         </div>
       </Layout>
@@ -103,6 +103,9 @@ export default {
   width: 100%;
   height: 100%;
   // background: #999191;
+}
+.content {
+  height: 100%;
 }
 .site-aside {
   width: 250px;

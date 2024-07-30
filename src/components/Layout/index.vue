@@ -28,13 +28,14 @@ export default {
   height: 100%;
 
   flex: 0 0 auto;
+  overflow: hidden;
 }
 .main {
   flex: 1 1 auto;
-  height: 100%;
+  overflow: hidden;
 }
 .right {
-  height: 100%;
+  overflow: hidden;
 
   flex: 0 0 auto;
 }
